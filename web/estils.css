@@ -1,6 +1,6 @@
 /* Definicions de classes utils genèriques */
-.desktop { display: flex !important; }
-.mobile  { display: flex !important; }
+.desktop { display: flex; }
+.mobile  { display: flex; }
 @media only screen and (max-device-width: 599px) { .desktop { display: none !important; } }
 @media only screen and (min-device-width: 600px) { .mobile  { display: none !important; } }
 .flex       { display: flex; }
@@ -13,52 +13,86 @@
 /* Definicions específiques */
 table, th, td {
     border-collapse: collapse;
-    border: 1px solid black;
+    
 }
-
-.botoMenu {
-    color: blue;
-    cursor: pointer;
-    margin: 0 16px;
-}
-
-.botoMenu:hover {
-    text-decoration: underline;
-}
-
 body {
     font-family: "Open Sans";
 }
-
+body > div {
+    display: none;
+}
 body > #frontendHome {
     display: flex;
+    background-image: url('/servidorWeb/web/imatges/aladeavion.jpg');
+    position: absolute;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin: auto;
 }
 
-body > #frontendPresentacio {
-    display: none;
+
+
+
+
+.botoMenu {
+    color: white;
+    cursor: pointer;
+    margin: 16px;
+    flex-direction: row;
+    justify-content: left;
+}
+.botoMenu:hover {
+    text-decoration: underline;
+}
+#frontendMenuMobile > .botoMenu {
+    color: white;
+    background-color: grey;
+    width: 50%;
+    text-align: left;
+    margin: auto;
+    justify-content: left;
+    border-bottom-width: 2px;
+    border-bottom: aqua;
+    padding: 5px;
+}
+@media only screen and (max-device-width: 599px) {
+    #frontendMenuMobile > .botoMenu {
+        width: 100%;
+    }  
 }
 
-body > #frontendProductes {
-    display: none;
+
+
+#frontendMenuWeb {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: rgb(14, 19, 19);
+    background-color: grey;
+    color: grey;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logoMenuWeb {
+    display: flex;
+    cursor: pointer;
+    background-color: grey;
+    border-bottom-width: thin;
+    position: sticky;
+    align-items: center;
+    color: white;
+    top: 0;
 }
 
-body > #frontendProductes > #productesContinguts {
+
+
+
+#productesContinguts {
     width: 100%;
 }
-
-body > #frontendContacte {
-    display: none;
-}
-
-body > #backofficeUsuaris {
-    display: none;
-}
-
-body > #backofficeProductes {
-    display: none;
-}
-
-body > #popups {
+#popups {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     display: none;
@@ -69,11 +103,208 @@ body > #popups {
     height: 100%;
     width: 100%;
 }
-
 #popups > div {
     border: solid 1px black;
     background-color: lightcyan;
     display: none;
 }
 
+/* Adicionales */
+#creix {
+    flex-grow: 250px;
+}
+.imagenFondo1 {
+    background: url("/web/imatges/amanecer.jpg") center / cover;
+    flex-direction: row;
+    display: flex;
+    z-index: 1;
+    width: 100%;
+}
+.colorgeneral {
+    background-color: grey;
+    z-index: 0;
+}
 
+/*menu mobil decente*/
+#frontendMenuMobile {
+    background-color: rgba(200, 200, 200, 0.5);
+    backdrop-filter: saturate(200%) blur(5px);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+#menuContainer {
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    top: 100%;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+#frontendMenuMobile > #menuContainer > div:first-child {
+    padding: 0.5em auto;
+}
+#frontendMenuMobile > #menuContainer > div {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 2em;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#frontendMenuMobile > #menuContainer > div:last-child {
+    margin-bottom: 10px;
+    padding: 0.5em auto;
+}
+#frontendMenuMobile > #menuContainer > div > a {
+    color: grey;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+#frontendMenuMobile > #menuContainer > div > a:visited {
+    color: grey;
+}
+
+/*inicio*/
+.centroInicio {
+    position: absolute;
+    align-items: center;
+    left: 70px;
+    right: 70px;
+    top: 100px;
+    bottom: 70px;
+    background-color: white;
+    z-index: 998;
+}
+
+/*Presentación*/
+#frontendPresentacio {
+    display: none;
+    flex-direction: column;
+}
+.imagenPresentacion {
+    background-image: url("/web/imatges/losangelesbien.jpg");
+    min-width: 100%;
+    min-height: 400px;
+    background-position: center;
+
+}
+#tituloPresentacion {
+    color: white;
+    position: absolute;
+    z-index: 900;
+    margin-top: 220px;
+    padding: 50px;
+    text-decoration: underline;
+}
+.textoPresentacion1  {
+    padding: 20px;
+}
+.textoPresentacion2  {
+    padding: 20px;
+}
+.textoPresentacion3  {
+    padding: 20px;
+}
+.imagencuerpoPresentacion1 {
+    background-image: url("/web/imatges/Roma-bridge-river-city-sunset_3840x2160.jpg");
+    min-width: 100%;
+    min-height: 500px;
+    background-position: center;
+
+}
+.imagencuerpoPresentacion2 {
+    background-image: url("/web/imatges/cancun-en-mexico-4605.jpg");
+    min-width: 100%;
+    min-height: 500px;
+    background-position: center;
+}
+.imagencuerpoPresentacion3 {
+    background-image: url("/web/imatges/nuevayork.jpg");
+    min-width: 100%;
+    min-height: 500px;
+    background-position: center;
+}
+.imagenfondoPresentacion {
+    background-image: url("/web/imatges/montanas-nevadas-2987.jpg");
+    z-index: 100;
+}
+@media only screen and (max-device-width: 599px) {
+    .imagenPresentacion {
+        min-height: 200px;
+    }
+    #tituloPresentacion {
+        padding: 40px;
+        margin-top: 0px;
+    }
+    .imagencuerpoPresentacion1 {
+        min-height: 300px;
+    }
+    .imagencuerpoPresentacion2 {
+        min-height: 300px;
+    }
+    .imagencuerpoPresentacion3 {
+        min-height: 300px;
+    }
+}
+
+
+/*Contacte*/
+#frontendContacte {
+    display: none;
+    flex-direction: column;
+}
+.ImagenContacto {
+    background-image: url("/web/imatges/tokio.jpg");
+    min-width: 100%;
+    min-height: 350px;
+    background-position: center;
+
+}
+.textoContacto {
+    margin: 20px;
+    padding: 20px;
+}
+#mapa {
+    width: 100%;
+}
+#tablaContacto, table, th, td {
+    border: none;
+    padding-right: 80px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+@media only screen and (max-device-width: 599px) {
+    .ImagenContacto {
+        min-height: 180px;
+    }
+    .textoContacto {
+        margin: 0;
+        padding: 10px;
+    }
+}
+
+
+/*Productes*/
+#progreso {
+    width: 100%;
+    background-color: grey;
+}
+#barra {
+    width: 1%;
+    height: 40px;
+    background-color: greenyellow;
+}
