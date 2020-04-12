@@ -21,16 +21,7 @@ body {
 body > div {
     display: none;
 }
-body > #frontendHome {
-    display: flex;
-    background-image: url('/servidorWeb/web/imatges/aladeavion.jpg');
-    position: absolute;
-    background-position: center;
-    height: 600px;
-    width: 100%;
-    background-repeat: no-repeat;
-    margin: auto;
-}
+
 
 
 
@@ -178,16 +169,14 @@ body > #frontendHome {
 }
 
 /*inicio*/
-.centroInicio {
-    position: absolute;
-    align-items: center;
-    left: 70px;
-    right: 70px;
-    top: 100px;
-    bottom: 70px;
-    background-color: white;
-    z-index: 998;
+#frontendHome {
+    display: none;
+    flex-direction: column;
 }
+#carouselHome {
+    display: flex;
+}
+
 
 /*Presentación*/
 #frontendPresentacio {
@@ -259,7 +248,17 @@ body > #frontendHome {
         min-height: 300px;
     }
 }
-
+.botonImagen1 {
+    display: none;
+    transition: .3s all ease-in-out;
+}
+.imagencuerpoPresentacion1:hover .botonImagen1{
+    display: block;
+    
+}
+.botonImagen1:hover {
+    background-color: grey;
+}
 
 /*Contacte*/
 #frontendContacte {

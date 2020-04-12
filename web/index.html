@@ -3,11 +3,15 @@
         <meta charset='utf-8'/>
         <title>MCViatges - Els millors vols al millor preu</title>
         <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
         <link rel='stylesheet' href='/web/estils.css'>
         <script src='https://code.getmdl.io/1.3.0/material.min.js' defer></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src='/web/script-login.js'></script>
         <script src='/web/script-navegacio.js'></script>
         <script src='/web/script-popups.js'></script>
@@ -41,12 +45,50 @@
             <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
+
+
+        
         <div id='frontendHome'>
-            <div class="colorgeneral"></div>
-            <div class="imagenFondo1"></div>
-            <div class="centroInicio">
+                <div class="text-center"><h2>Benvingut a MCViatges</h2></div>
                 <body>
-                    <h1>Sample text</h1>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="/web/imatges/Roma-bridge-river-city-sunset_3840x2160.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>EXPLORA</h3>
+                                <p><h5>Els llocs més apasionants del nostre planeta</h5></p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/web/imatges/mallorca.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>DESCOBREIX</h3>
+                                <p><h5>Cultures noves i paisatges exòtics</h5></p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="/web/imatges/losangelesbien.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>DELEITA'T</h3>
+                                <p><h5>I deixa't portar per lo desconegut</h5></p>
+                              </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Següent</span>
+                        </a>
+                      </div>
                 </body>
             </div>
             
@@ -61,11 +103,11 @@
                 <h3>Qui som nosaltres?</h3>
                 <h4><p>Hola, viatger! <br> Ens presentarem breument, nosaltres som MCViatges, una agència en la qual pots trobar els millors viatges al millor preu, fàcil i senzill. Per exemple:</p></h4>
                 <div class="textoPresentacion1"><h3>Viatge a Itàlia</h3><h4>Per un cost de 400 euros, disposes de allotjament complet i restaurants</h4></div>
-                <div class="imagencuerpoPresentacion1"><div onclick='navegacio.canviaSeccio("frontendProductes")'>Veure més</div></div>
+                <div class="imagencuerpoPresentacion1"><div class="row h-100"><div class="col-sm-12 my-auto"><button type="button" class="btn btn-light btn-lg btn-block botonImagen1">Veure més</button></div></div></div>
                 <div class="textoPresentacion2"><h3>Viatge a Mèxico</h3><h4>500€, hotel complet, amb activitats didàctiques i excursions variades.</h4></div>
-                <div class="imagencuerpoPresentacion2"><div onclick='navegacio.canviaSeccio("frontendProductes")'>Veure més</div></div>
+                <div class="imagencuerpoPresentacion2"><button type="button" class="btn btn-light btn-lg btn-block botonImagen2">Veure més</button></div>
                 <div class="textoPresentacion3"><h3>Viatge a Nova York</h3></div>
-                <div class="imagencuerpoPresentacion3"><div onclick='navegacio.canviaSeccio("frontendProductes")'>Veure més</div></div>
+                <div class="imagencuerpoPresentacion3"><button type="button" class="btn btn-light btn-lg btn-block botonImagen3">Veure més</button></div>
             </div>
             <div class="imagenfondoPresentacion"></div>
         </div>
