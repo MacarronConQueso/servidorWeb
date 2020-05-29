@@ -2,12 +2,14 @@
     <head>
         <meta charset='utf-8'/>
         <title>MCViatges - Els millors vols al millor preu</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Giga:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap">
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
         <link rel='stylesheet' href='/web/estils.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://code.getmdl.io/1.3.0/material.min.js' defer></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -19,37 +21,38 @@
         <script src='/web/script-seccio-frontendproductes.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
+        <script src='/web/script-seccio-frontendproducte.js'></script>
     </head>
     <body onload='inicia()'>
         <div id='frontendMenuWeb' class='flexRow desktop'>
             <div class="logoMenuWeb desktop>"><i class="material-icons">menu</i></div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendContacte")'>Contacte</div>
+            <div class='botoMenu' onclick='navegacio.canviaSeccio("/frontendHome")'>Inici</div>
+            <div class='botoMenu' onclick='navegacio.canviaSeccio("/frontendPresentacio")'>Presentació</div>
+            <div class='botoMenu' onclick='navegacio.canviaSeccio("/frontendProductes")'>Productes</div>
+            <div class='botoMenu' onclick='navegacio.canviaSeccio("/frontendContacte")'>Contacte</div>
             <div id='botoLoginWeb' class='botoMenu' onclick='popups.mostraPopup("popupLogin")'>Login backoffice</div>
-            <div id='botoGestioUsuarisWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris")'>Gestió usuaris</div>
-            <div id='botoGestioProductesWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
+            <div id='botoGestioUsuarisWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("/backofficeUsuaris")'>Gestió usuaris</div>
+            <div id='botoGestioProductesWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("/backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutWeb' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
         <div class="logoMenuWeb mobile" onclick="mostraMenu()"><i class="material-icons">menu</i></div>
         <div id='frontendMenuMobile' class='flexColumn mobile' ontouchend='amagaMenu(event)'>
             <div id='menuContainer'>
-                <div ontouchend='navegacio.canviaSeccio("frontendHome")'>Inici</div>
-                <div ontouchend='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
-                <div ontouchend='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
-                <div ontouchend='navegacio.canviaSeccio("frontendContacte")'>Contacte</div>
+                <div ontouchend='navegacio.canviaSeccio("/frontendHome")'>Inici</div>
+                <div ontouchend='navegacio.canviaSeccio("/frontendPresentacio")'>Presentació</div>
+                <div ontouchend='navegacio.canviaSeccio("/frontendProductes")'>Productes</div>
+                <div ontouchend='navegacio.canviaSeccio("/frontendContacte")'>Contacte</div>
                 <div id='botoLoginMobil' ontouchend='popups.mostraPopup("popupLogin")'>Login backoffice</div>
             </div>
-            <div id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris")'>Gestió usuaris</div>
-            <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
+            <div id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("/backofficeUsuaris")'>Gestió usuaris</div>
+            <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("/backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
 
 
         
         <div id='frontendHome'>
-                <div class="text-center"><h2>Benvingut a MCViatges</h2></div>
+                <div class="TituloHome text-center"><h2>Benvingut a MCViatges</h2></div>
                 <body>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -99,26 +102,94 @@
         <div id='frontendPresentacio'>
             <div class="imagenPresentacion"></div>
             <div id="tituloPresentacion"><h1>MCViatges</h1></div>
-            <div class="cuerpoPresentacion">
-                <h3>Qui som nosaltres?</h3>
-                <h4><p>Hola, viatger! <br> Ens presentarem breument, nosaltres som MCViatges, una agència en la qual pots trobar els millors viatges al millor preu, fàcil i senzill. Per exemple:</p></h4>
-                <div class="textoPresentacion1"><h3>Viatge a Itàlia</h3><h4>Per un cost de 400 euros, disposes de allotjament complet i restaurants</h4></div>
-                <div class="imagencuerpoPresentacion1"><div class="row h-100"><div class="col-sm-12 my-auto"><button type="button" class="btn btn-light btn-lg btn-block botonImagen1">Veure més</button></div></div></div>
-                <div class="textoPresentacion2"><h3>Viatge a Mèxico</h3><h4>500€, hotel complet, amb activitats didàctiques i excursions variades.</h4></div>
-                <div class="imagencuerpoPresentacion2"><button type="button" class="btn btn-light btn-lg btn-block botonImagen2">Veure més</button></div>
-                <div class="textoPresentacion3"><h3>Viatge a Nova York</h3></div>
-                <div class="imagencuerpoPresentacion3"><button type="button" class="btn btn-light btn-lg btn-block botonImagen3">Veure més</button></div>
+            <div class="cuerpoPresentacion text-center">
+                <h2>Qui som nosaltres?</h2>
+                <h3><div class="textoPresentacion"><p>Hola, viatger! <br> Ens presentarem breument, nosaltres som MCViatges, una agència en la qual pots trobar els millors viatges al millor preu, fàcil i senzill, a més, descobrir nous llocs per viure noves experiències. Cerca en la nostra web els viatges que vulguis quan vulguis, pots personalitzar-los de qualsevol manera i adaptar les dates / hotels / activitats al teu gust. Aqui et donem uns petits exemples dels viatges que podem oferir:</p></div></h3>
             </div>
-            <div class="imagenfondoPresentacion"></div>
+            <div class="container mb-5 mt-5">
+                <div class="pricing card-deck flex-column flex-md-row mb-3">
+                    <div class="card card-pricing text-center px-3 mb-4">
+                        <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Nova York</span>
+                        <div class="bg-transparent card-header pt-4 border-0">
+                            <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">€<span class="price">750</span><span class="h6 text-muted ml-2">/ per persona</span></h1>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-unstyled mb-4">
+                                <li>Central Park en tot el seu esplendor</li>
+                                <li>Times Square</li>
+                                <li>La ciutat que mai dorm</li>
+                                <li>La estàtua de la Libertat i moltes coses mes, què esperes?</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-secondary mb-3">Veure més</button>
+                        </div>
+                    </div>
+                    <div class="card card-pricing popular shadow text-center px-3 mb-4">
+                        <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Tokio</span>
+                        <div class="bg-transparent card-header pt-4 border-0">
+                            <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="30">€<span class="price">850</span><span class="h6 text-muted ml-2">/ per persona</span></h1>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-unstyled mb-4">
+                                <li>La zona comercial d'Akihabara</li>
+                                <li>Castells del període Edo.</li>
+                                <li>Gastronomia peculiar</li>
+                                <li>Si, també hi han katanes</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-secondary mb-3">Veure més</button>
+                        </div>
+                    </div>
+                    <div class="card card-pricing text-center px-3 mb-4">
+                        <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Praga</span>
+                        <div class="bg-transparent card-header pt-4 border-0">
+                            <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="45">€<span class="price">400</span><span class="h6 text-muted ml-2">/ per persona</span></h1>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-unstyled mb-4">
+                                <li>Monuments Històrics</li>
+                                <li>Llocs magnífics</li>
+                                <li>Cultura</li>
+                                <li>Surten unes fotos acollonants</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-secondary mb-3">Veure més</button>
+                        </div>
+                    </div>
+                    <div class="card card-pricing text-center px-3 mb-4">
+                        <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Mallorca</span>
+                        <div class="bg-transparent card-header pt-4 border-0">
+                            <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="60">€<span class="price">420</span><span class="h6 text-muted ml-2">/ per persona</span></h1>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-unstyled mb-4">
+                                <li>Platjes Increíbles</li>
+                                <li>Vistes magnífiques</li>
+                                <li>Festa 24/7</li>
+                                <li>Activitats a l'aire lliure</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-secondary mb-3">Veure més</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
 
         <div id='frontendProductes'>
-            <div id='productesLoading'>Carregant productes ...</div>
+            <div id='productesLoading'>
+                <div class="text-center SpinnerCarga">
+                    <div class="spinner-border m-5 justify-content-center" style="width: 5rem; height: 5rem;" role="status"></div>
+                </div>
+            </div>
             <div id='productesContinguts' class='flexColumn'></div>
         </div>
-
+        <div id='frontendProducte'>
+            <div id='producteLoading'>
+                <div class="text-center SpinnerCarga">
+                    <div class="spinner-border m-5 justify-content-center" style="width: 5rem; height: 5rem;" role="status"></div>
+                </div>
+            </div>
+            <div id='producteContinguts'></div>
+        </div>
 
 
 
@@ -143,20 +214,139 @@
                         <td>mcviatges@gmail.com</td>
                         
                     </tr>
-                    <tr>
-                        <th>Xarxes Socials</td>
-                        <td>En teoria aqui van iconos</td>
-                        
-                    </tr>
                 </table>
+                </div>
+                <div class="text-center h3">Xarxes Socials</div>
+                <div class="box">
+                    <div class="container">
+                         <div class="row">
+                             
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                               
+                                    <div class="box-part text-center">
+                                        
+                                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                                        
+                                        <div class="title">
+                                            <h4>Instagram</h4>
+                                        </div>
+                                        <a href="#">Visita</a>
+                                        
+                                     </div>
+                                </div>	 
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                               
+                                    <div class="box-part text-center">
+                                        
+                                        <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+                                        
+                                        <div class="title">
+                                            <h4>Facebook</h4>
+                                        </div>
+                                        <a href="#">Visita</a>
+                                        
+                                     </div>
+                                </div>	 
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                               
+                                    <div class="box-part text-center">
+                                        
+                                        <i class="fa fa-pinterest-p fa-3x" aria-hidden="true"></i>
+                                        
+                                        <div class="title">
+                                            <h4>Pinterest</h4>
+                                        </div>
+                                        <a href="#">Visita</a>
+                                        
+                                     </div>
+                                </div>	 
+                        </div>		
+                    </div>
                 </div>
             </div>
             <div id="mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.65262610905!2d2.004983163396889!3d41.316419971723946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbf9dbf5a673ee3ea!2sInstituto%20Miramar!5e0!3m2!1ses!2ses!4v1583832120107!5m2!1ses!2ses" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+            <div class=" text-center h3 Contactanos">Contacta amb Nosaltres</div>
+            <div class="contactform">
+                <div class="col-lg-8 col-lg-offset-2">
+
+        
+                    <form id="contact-form" method="post" action="" role="form">
+            
+                    <div class="messages"></div>
+            
+                    <div class="controls">
+            
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_name">Noms *</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Introdueix el teu nom *" required="requerit" data-error="Camp Requerit">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_lastname">Cognoms *</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Introdueix els teus cognoms *" required="requerit" data-error="Camp Requerit">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="El teu email *" required="requerit" data-error="Camp Requerit">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_phone">Telèfon</label>
+                            <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="El teu telèfon *">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="form_message">Missatge *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Missatge per nosaltres *" rows="4" required data-error="Missatge obligatori"></textarea>
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <input type="submit" class="btn btn-success btn-send" value="Envía">
+                        </div>
+                      </div>
+                     
+                    </div>
+            
+                    </form>
+            
+                  </div>
+            
+                </div>
+            </div>
         </div>
+
+
         <div id='backofficeUsuaris'>
-            <div id='backofficeUsuarisLoading'>Carregant usuaris ...</div>
-            <div id='backofficeUsuarisContinguts' class='flexColumn'></div>
+            <div id='backofficeUsuarisLoading'>
+                <div class="text-center SpinnerCarga">
+                    <div class="spinner-border m-5 justify-content-center" style="width: 5rem; height: 5rem;" role="status"></div>
+                </div>
+            </div>
+            <div id='backofficeUsuarisContinguts' class='flexColumn'>
+                <div class='fondoTituloBU'></div>
+                <div class='tituloBU'>Gestió d'usuaris</div>
+                <div id='backofficeUsuarisContinguts' class='tablaBackofficeUsuaris'></div>
+            </div>
         </div>
+        
         <div id='backofficeProductes'>
             Pàgina per fer la gestió dels productes
         </div>
@@ -171,6 +361,8 @@
                 <div id='loginLoading' class='none'>Carregant ...</div>
                 <div id='loginError' class='none'>Error al fer login ...</div>
             </div>
+
+            
             <div id='popupBackofficeUsuaris' class='flexColumn'>
                 <div>Id:</div>
                 <div id='backofficeUsuarisId'></div>

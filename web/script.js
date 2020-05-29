@@ -1,8 +1,7 @@
 var login = null
 var navegacio = null
 var popups = null
-var seccioBackofficeUsuaris = null
-var seccioFrontendProductes = null
+var seccio = null
 var menuVisibleMobil = false
 var i = 0
 
@@ -13,8 +12,6 @@ async function inicia () {
     login = new ObjLogin()
     navegacio = new ObjNavegacio()
     popups = new ObjPopups()
-    seccioBackofficeUsuaris = new ObjSeccioBackofficeUsuaris()
-    seccioFrontendProductes = new ObjSeccioFrontendProductes()
 
     // Inicia les funcions de navegació HTML5
     navegacio.inicia()
@@ -32,13 +29,7 @@ async function inicia () {
     await login.autenticaAmbToken()
 }
 
-function iniciaSeccio(seccio) {
-    switch(seccio) {
-    case 'frontendProductes': seccioFrontendProductes.iniciaSeccio(); break
-    case 'backofficeUsuaris': seccioBackofficeUsuaris.iniciaSeccio(); break
-    default:
-    }
-}
+
 
 
 
@@ -70,29 +61,4 @@ function amagaMenu (evt) {
     refContainer.style.transform = 'translateY(0)'
 }
 
-/*Barra de carga*/
-function carga() {
-    if (i == 0) {
-        i = 1;
-        var elem = document.getElementById(barra);
-        var width =1;
-        var id = setInterval(frame,10);
-        function frame() {
-            if (width >= 100) {
-                clearInterval(id);
-                i = 0;
-            } else {
-                width++;
-                elem.style.width = width + "%";
-            }
-        }
-    }
-}
-
-/*Carousel*/
-'#carouselExampleIndicators'.on('slid.bs.carousel'), function (e) {
-    'carouselExampleIndicators'.carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
-  }
-  
-  '#carouselExampleIndicators'.carousel('1') // Will start sliding to the slide 1 and returns to the caller
-  '#carouselExampleIndicators'.carousel('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
+ 
